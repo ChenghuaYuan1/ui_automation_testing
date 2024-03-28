@@ -1,0 +1,21 @@
+---
+# folder and file config should be absolute path or relative path from project root.
+# absolute path format: /tmp/logs, c:/result/report.html
+# relative path format: logs, report/report.html
+log_config: settings/logging.yaml
+log_folder: logs
+report_file: logs/report.html
+original_image_file: files/images/original_images
+result_image_file: files/images/result_images
+
+
+browser:
+  type: Chrome        # supported: Chrome(default), Firefox
+  # Please specify web driver path if it is not in project root folder,
+  # For example: C:\webdrivers\geckodriver.exe
+  driver_path: ~
+  # please specify your browser binary path if it could not be executed by default
+  # For example: C:\Program Files\Mozilla Firefox\firefox.exe
+  binary_path: ~
+
+base_url: https://www.baidu.com/

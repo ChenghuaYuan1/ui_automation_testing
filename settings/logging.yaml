@@ -1,0 +1,51 @@
+---
+version: 1
+disable_existing_loggers: False
+formatters:
+    simple:
+        format: "%(asctime)s - %(levelname)s - %(filename)s - %(lineno)d - %(thread)d - %(message)s"
+    file:
+        format: "%(asctime)s - %(levelname)s - %(pathname)s - %(lineno)d - %(thread)d - %(message)s"
+    robot:
+        format: "%(lineno)d - %(thread)d - %(message)s"
+
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: INFO
+        formatter: simple
+        stream: ext://sys.stdout
+
+    debug_file_handler:
+        class: logging.handlers.TimedRotatingFileHandler
+        level: DEBUG
+        formatter: file
+        filename: debug.log
+        when: D
+        interval: 1
+        backupCount: 10
+        encoding: utf8
+
+    info_file_handler:
+        class: logging.handlers.TimedRotatingFileHandler
+        level: INFO
+        formatter: file
+        filename: info.log
+        when: D
+        interval: 1
+        backupCount: 10
+        encoding: utf8
+
+    error_file_handler:
+        class: logging.handlers.TimedRotatingFileHandler
+        level: ERROR
+        formatter: file
+        filename: error.log
+        when: D
+        interval: 1
+        backupCount: 10
+        encoding: utf8
+
+root:
+    level: DEBUG
+    handlers: [console, debug_file_handler, info_file_handler, error_file_handler]
