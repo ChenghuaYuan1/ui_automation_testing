@@ -5,6 +5,6 @@ image:
   # User can specific which searched result image will be saved in the folder ./files/images/result_images
   result_file_name: image_01_result.jpeg
   # visit_result is the number of the result images you will visit, which starts from 1
-  visit_result: 1
+  visit_result: 3
   #if the similarity_score is greater than 50, then the search results are considered relevant to the original image
   similarity_score: 20
